@@ -30,5 +30,6 @@ void quick_sort(int *array, size_t size);
 int lomuto_partition(int *array, int low, int high, int size);
 void swap_Array(int *array, size_t j, size_t k);
 void modifyQuickSort(int *arr, int low, int high, int size);
+void shell_sort(int *array, size_t size);
 
 #endif
