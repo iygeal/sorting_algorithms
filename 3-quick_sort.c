@@ -78,7 +78,11 @@ void modifyQuickSort(int *arr, int low, int high, int size)
 		int pi = lomuto_partition(arr, low, high, size);
 
 		/* Recursively sort the sub-arrays */
+
+		/* Sort the left subarray (elements less than the pivot).*/
 		modifyQuickSort(arr, low, pi - 1, size);
+
+		/* Sort the right subarray (elements greater than the pivot).*/
 		modifyQuickSort(arr, pi + 1, high, size);
 	}
 }
