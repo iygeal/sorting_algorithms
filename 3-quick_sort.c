@@ -1,11 +1,6 @@
 #include "sort.h"
 
 
-int partition(int *array, int low, int high, int size);
-void swap_Array(int *array, size_t j, size_t k);
-void modifyQuickSort(int *arr, int low, int high, int size);
-
-
 /**
  * swap_Array - Swap two elements in an array
  *
@@ -27,7 +22,7 @@ void swap_Array(int *array, size_t j, size_t k)
 /**
  * quick_sort - Algorithm for Quick Sort
  *
- * @array: Pointer that point to an array
+ * @array: Pointer that points to an array
  * @size: The size of the array
  *
  */
@@ -37,9 +32,9 @@ void quick_sort(int *array, size_t size)
 }
 
 /**
- * lomuto_partition - Function that implement the Lomuto Partition Scheme
+ * lomuto_partition - Function that implements the Lomuto Partition Scheme
  *
- * @arr: Pointer that point to an array
+ * @arr: Pointer that points to an array
  * @low: The minimum index
  * @high: The maximum index
  * @size: The size of the array
@@ -52,7 +47,7 @@ int lomuto_partition(int *arr, int low, int high, int size)
 	int pivot = arr[high];
 	int j, i = (low  - 1);
 
-	for (j = low ; j <= high; j++)
+	for (j = low; j <= high; j++)
 	{
 		if (arr[j] <= pivot)
 		{
@@ -68,9 +63,9 @@ int lomuto_partition(int *arr, int low, int high, int size)
 }
 
 /**
- * modifyQuickSort - Algorithm Quick Sort
+ * modifyQuickSort - Recursive function to modify Quick Sort
  *
- * @arr: Pointer that point to an array
+ * @arr: Pointer that points to an array
  * @low: The minimum index
  * @high: The maximum index
  * @size: The size of the array
@@ -82,6 +77,7 @@ void modifyQuickSort(int *arr, int low, int high, int size)
 	{
 		int pi = lomuto_partition(arr, low, high, size);
 
+		/* Recursively sort the sub-arrays */
 		modifyQuickSort(arr, low, pi - 1, size);
 		modifyQuickSort(arr, pi + 1, high, size);
 	}
