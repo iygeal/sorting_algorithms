@@ -10,6 +10,10 @@ void shell_sort(int *array, size_t size)
 	size_t gap = 1, i, j;
 	int temp;
 
+	/* Check for empty or single-element array */
+	if (array == NULL || size < 2)
+		return;
+
 	/* Calculate the initial gap using Knuth sequence */
 	while (gap < size / 3)
 	{
@@ -23,7 +27,7 @@ void shell_sort(int *array, size_t size)
 			temp = array[i];
 			j = i;
 
-			/* Shit elements until correct position for temp is found*/
+			/* Shift elements until correct position for temp is found*/
 			while (j >= gap && array[j - gap] > temp)
 			{
 				array[j] = array[j - gap];
