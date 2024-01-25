@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <stddef.h>
 
 /**
  * struct listint_s - Doubly linked list node
@@ -31,5 +32,8 @@ int lomuto_partition(int *array, int low, int high, int size);
 void swap_Array(int *array, size_t j, size_t k);
 void modifyQuickSort(int *arr, int low, int high, int size);
 void shell_sort(int *array, size_t size);
+void cocktail_sort_list(listint_t **list);
+void swap_nodes(listint_t **list, listint_t *node1, listint_t *node2);
+void free_list(listint_t *list);
 
 #endif
